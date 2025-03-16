@@ -1,0 +1,47 @@
+{
+  "name": "solana-viz-mcp",
+  "version": "1.0.0",
+  "description": "SolanaViz MCP server for visualizing and analyzing Solana blockchain data",
+  "main": "build/index.js",
+  "type": "module",
+  "scripts": {
+    "build": "tsc && node -e \"require('fs').chmodSync('build/index.js', '755')\"",
+    "start": "node --input-type=module build/index.js",
+    "dev": "tsc-watch --onSuccess \"node --input-type=module build/index.js\"",
+    "lint": "eslint src/**/*.ts",
+    "test": "jest"
+  },
+  "dependencies": {
+    "@goat-sdk/adapter-model-context-protocol": "^0.2.10",
+    "@goat-sdk/plugin-allora": "^0.1.7",
+    "@goat-sdk/plugin-birdeye": "^0.1.6",
+    "@goat-sdk/plugin-coingecko": "^0.2.8",
+    "@goat-sdk/plugin-dexscreener": "^0.1.8",
+    "@goat-sdk/plugin-rugcheck": "^0.1.5",
+    "@goat-sdk/plugin-spl-token": "^0.2.15",
+    "@goat-sdk/wallet-solana": "^0.2.15",
+    "@modelcontextprotocol/sdk": "^1.6.1",
+    "@solana/web3.js": "^1.87.6",
+    "bs58": "^5.0.0",
+    "date-fns": "^2.30.0",
+    "node-cache": "^5.1.2",
+    "retry": "^0.13.1",
+    "zod": "^3.22.4"
+  },
+  "devDependencies": {
+    "@types/node": "^20.9.0",
+    "@types/retry": "^0.12.5",
+    "@typescript-eslint/eslint-plugin": "^6.10.0",
+    "@typescript-eslint/parser": "^6.10.0",
+    "eslint": "^8.53.0",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.1.1",
+    "tsc-watch": "^6.0.4",
+    "typescript": "^5.2.2"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "private": true,
+  "license": "MIT"
+}
